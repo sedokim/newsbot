@@ -68,3 +68,5 @@ def job():
     news_html = get_news_content(keyword)
 
     send_email(news_html)
+if __name__ == "__main__":
+    job()
