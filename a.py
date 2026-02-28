@@ -6,10 +6,9 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import schedule
-
-# --- 설정 구간 ---
-EMAIL_ADDRESS = "sedokim123@gmail.com"
-EMAIL_PASSWORD = "ixdy setl kvni dzgy"  # 구글 2단계 인증 후 생성된 '앱 비밀번호' 사용
+import os
+EMAIL_ADDRESS = os.environ.get("EMAIL_USER")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASS")
 RECEIVER_EMAIL = "sedokim123@gmail.com"
 # ----------------
 
@@ -67,4 +66,5 @@ def send_email(content):
 def job():
     keyword = "인공지능" # 여기에 원하는 키워드 고정
     news_html = get_news_content(keyword)
+
     send_email(news_html)
