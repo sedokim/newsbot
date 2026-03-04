@@ -2,7 +2,7 @@ name: News Bot
 
 on:
   schedule:
-    - cron: '56 6 * * *' # UTC 06:56 (한국시간 오후 3시 56분)
+    - cron: '10 5 * * *' # UTC 06:56 (한국시간 오후 3시 56분)
   workflow_dispatch: # 수동 실행 버튼 생성
 
 jobs:
